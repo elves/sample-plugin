@@ -1,0 +1,12 @@
+github.com/creack/pty v1.1.11/go.mod h1:oKZEueFk5CKHvIhNR5MUki03XCEU+Q6VDXinZuGJ33E=
+github.com/mattn/go-isatty v0.0.12 h1:wuysRhFDzyxgEmMf5xjvJ2M9dZoWAXNNr5LSBS7uHXY=
+github.com/mattn/go-isatty v0.0.12/go.mod h1:cbi8OIDigv2wuxKPP5vlRcQ1OAZbq2CE4Kysco4FUpU=
+go.etcd.io/bbolt v1.3.5/go.mod h1:G5EMThwa9y8QZGBClrRx5EY+Yw9kAhnjy3bSjsnlVTQ=
+golang.org/x/sys v0.0.0-20200116001909-b77594299b42/go.mod h1:h1NjWce9XRLGQEsW7wpKNCjG9DtNlClVuFLEZdDNbEs=
+golang.org/x/sys v0.0.0-20200202164722-d101bd2416d5/go.mod h1:h1NjWce9XRLGQEsW7wpKNCjG9DtNlClVuFLEZdDNbEs=
+golang.org/x/sys v0.0.0-20200824131525-c12d262b63d8 h1:AvbQYmiaaaza3cW3QXRyPo5kYgpFIzOAfeAAN7m3qQ4=
+golang.org/x/sys v0.0.0-20200824131525-c12d262b63d8/go.mod h1:h1NjWce9XRLGQEsW7wpKNCjG9DtNlClVuFLEZdDNbEs=
+src.elv.sh v0.14.1-0.20210620181412-a7c4bbb00f3e h1:uCKxGKj1Y/ftomEKNYL9VhwtX26xKKdbiCd1BUA5uPY=
+src.elv.sh v0.14.1-0.20210620181412-a7c4bbb00f3e/go.mod h1:QZeV2lnNX8bGVLRPbnvW5BC2aRDtmP//RU73ooyn2Cw=
+src.elv.sh v0.14.1-0.20210620210801-30a93948d781 h1:Yk5uWouRPsPGP+c9IphSuiLVxvp8QmUu787BzN63JPk=
+src.elv.sh v0.14.1-0.20210620210801-30a93948d781/go.mod h1:QZeV2lnNX8bGVLRPbnvW5BC2aRDtmP//RU73ooyn2Cw=
