@@ -6,5 +6,3 @@ import (
 )
 
 var Ns = eval.NsBuilder{"foo": vars.NewReadOnly("bar")}.Ns()
-
-func main() {}

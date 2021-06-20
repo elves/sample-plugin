@@ -6,7 +6,9 @@ modules written in Elvish.
 Plugins are only supported on platforms supported by Go's
 [plugin](https://pkg.go.dev/plugin) package.
 
-To create an Elvish plugin, first follow these steps to create the source tree:
+## Writing a plugin
+
+To create an Elvish plugin, follow these steps:
 
 1.  Initialize a new Go module (replace `github.com/elves/sample-plugin` with
     your repo path):
@@ -17,9 +19,6 @@ To create an Elvish plugin, first follow these steps to create the source tree:
 
 2.  Add Go source files to form a `main` package. The package should export a
     variable named `Ns` that represents an Elvish namespace.
-
-    You also need to add a `main` function, but it will not be executed, so you
-    can leave it empty.
 
     See `main.go` in this repository for an example.
 
@@ -38,19 +37,11 @@ To create an Elvish plugin, first follow these steps to create the source tree:
     go mod tidy
     ```
 
-Now you have the source files ready, build and use the plugin with the following
-steps:
+## Building the plugin
 
-1.  Build the plugin:
+With the source files ready, build the plugin with the following steps:
 
-    ```sh
-    go build -buildmode=plugin
-    ```
-
-    This will create a new `${name}.so` in the current directory, `${name}`
-    being the same as the directory name.
-
-2.  Build Elvish with plugin support, at exactly the same version used by the
+1.  Build Elvish with plugin support, at exactly the same version used by the
     plugin:
 
     ```sh
@@ -63,12 +54,41 @@ steps:
     E:CGO_ENABLED=1 go install src.elv.sh/cmd/elvish@(go list -f '{{.Version}}' -m src.elv.sh)
     ```
 
-3.  Scripts may now use the `.so` file as a module:
+2.  Build the plugin:
 
     ```sh
-    elvish sample-script.elv
-    # Outputs "bar"
+    go build -buildmode=plugin
     ```
+
+    This will create a new `${name}.so` in the current directory, `${name}`
+    being the same as the directory name.
+
+Alternatively, if you have a clone of the Elvish repository, you can also use
+these steps:
+
+1.  Build Elvish with plugin support:
+
+    ```sh
+    cd /path/to/elvish/repository
+    git checkout version-encoded-in-plugin-go.mod
+    make get ELVISH_PLUGIN_SUPPORT=1
+    ```
+
+2.  Build the plugin:
+
+    ```sh
+    go build -buildmode=plugin -trimpath
+    ```
+
+    The `-trimpath` flag is needed to be consistent with the Elvish binary built
+    in step 1.
+
+After building the plugin, scripts may now use the `.so` file as a module:
+
+```sh
+elvish sample-script.elv
+# Outputs "bar"
+```
 
 Whenever you rebuild Elvish or the plugin, you have to make sure that their
 versions are synchronized, and built with the same version of Go compiler.
