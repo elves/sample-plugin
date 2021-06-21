@@ -22,6 +22,10 @@ To create an Elvish plugin, follow these steps:
 
     See `main.go` in this repository for an example.
 
+    In general, you can reference the various [builtin
+    modules](https://src.elv.sh/pkg/eval/mods) for how to build the namespace
+    and how Go functions are exported to Elvish.
+
 3.  Add the latest commit of Elvish as a dependency:
 
     ```sh
